@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Today I Learnt</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
+  <title>Chef Has a Different Gemrc</title>
+  <meta name="description" content="While the global /etc/gemrc source is standard for system installed gems, gemsthat come in omnibus packages like chef-client don’t respect this setting. Forc...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://til.maltson.com/">
+  <link rel="canonical" href="http://til.maltson.com/2015/11/05/chef-different-gemrc.html">
   <link rel="alternate" type="application/rss+xml" title="Today I Learnt" href="http://til.maltson.com/feed.xml" />
 </head>
 
@@ -57,31 +56,20 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">Chef Has a Different Gemrc</h1>
+    <p class="post-meta">Nov 5, 2015</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Nov 5, 2015</span>
+  <article class="post-content">
+    <p>While the global <code>/etc/gemrc</code> source is standard for system installed gems, gems
+that come in omnibus packages like <code>chef-client</code> don’t respect this setting. For
+<a href="http://stackoverflow.com/questions/22259362/where-chef-store-the-gem-source-repository/28816880#28816880">chef</a> it’s <code>/opt/chef/embedded/etc/gemrc</code>.</p>
 
-        <h2>
-          <a class="post-link" href="/2015/11/05/chef-different-gemrc.html">Chef Has a Different Gemrc</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 4, 2015</span>
 
-        <h2>
-          <a class="post-link" href="/2015/11/04/global-gemrc.html">Global Gem Configuration</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 
