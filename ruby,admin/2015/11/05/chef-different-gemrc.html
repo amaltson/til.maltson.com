@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Global Gem Configuration</title>
-  <meta name="description" content="When changing the gem source with gem source --add &lt;url&gt; it only changes in~/.gemrc for that user, not globally. Make the change in /etc/gemrc to makei...">
+  <title>Chef Has a Different Gemrc</title>
+  <meta name="description" content="While the global /etc/gemrc configuration is standard for system installed gems, gemsthat come in omnibus packages like chef-client, chefdk, etc don’t respec...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://til.maltson.com/2015/11/04/global-gemrc.html">
-  <link rel="alternate" type="application/rss+xml" title="Today I Learnt" href="http://til.maltson.com/feed.xml" />
+  <link rel="canonical" href="http://til.maltson.com/ruby,admin/2015/11/05/chef-different-gemrc.html">
+  <link rel="alternate" type="application/rss+xml" title="Today I Learned" href="http://til.maltson.com/feed.xml" />
 </head>
 
   <body>
@@ -20,7 +20,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">Today I Learnt</a>
+    <a class="site-title" href="/">Today I Learned</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -59,14 +59,15 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Global Gem Configuration</h1>
-    <p class="post-meta">Nov 4, 2015</p>
+    <h1 class="post-title">Chef Has a Different Gemrc</h1>
+    <p class="post-meta">Nov 5, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>When changing the gem source with <code>gem source --add &lt;url&gt;</code> it only changes in
-<code>~/.gemrc</code> for that user, not globally. Make the change in <code>/etc/gemrc</code> to make
-it global.</p>
+    <p>While the global <code>/etc/gemrc</code> configuration is standard for system installed gems, gems
+that come in omnibus packages like <code>chef-client</code>, <code>chefdk</code>, etc don’t respect
+this setting. It <a href="http://stackoverflow.com/questions/22259362/where-chef-store-the-gem-source-repository/28816880#28816880">turns out</a> for <code>chef-client</code> it’s <code>/opt/chef/embedded/etc/gemrc</code>.</p>
+
 
   </article>
 
@@ -79,12 +80,12 @@ it global.</p>
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">Today I Learnt</h2>
+    <h2 class="footer-heading">Today I Learned</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
-          <li>Today I Learnt</li>
+          <li>Today I Learned</li>
           <li><a href="mailto:"></a></li>
         </ul>
       </div>
@@ -123,7 +124,7 @@ it global.</p>
       </div>
 
       <div class="footer-col  footer-col-3">
-        <p class="text">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+        <p class="text">Microblog of something technical I learned today.
 </p>
       </div>
     </div>
