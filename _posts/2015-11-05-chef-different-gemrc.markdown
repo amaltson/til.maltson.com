@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: theme:post
 title: "Chef Has A Different Gemrc"
 date: 2015-11-05T22:42:47-05:00
 tags: [ruby, admin]

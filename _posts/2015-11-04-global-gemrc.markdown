@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: theme:post
 title: "Global Gem Configuration"
 date: 2015-11-04T16:00:00-05:00
 tags: [ruby, admin]
