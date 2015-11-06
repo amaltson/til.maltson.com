@@ -2,7 +2,7 @@
 layout: post
 title: "Chef Has A Different Gemrc"
 date: 2015-11-05T22:42:47-05:00
-categories: ruby,admin
+tags: [ruby, admin]
 ---
 
 While the global `/etc/gemrc` configuration is standard for system installed gems, gems

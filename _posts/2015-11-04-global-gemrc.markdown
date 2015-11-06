@@ -2,7 +2,7 @@
 layout: post
 title: "Global Gem Configuration"
 date: 2015-11-04T16:00:00-05:00
-categories: ruby,admin
+tags: [ruby, admin]
 ---
 
 When changing the gem source with `gem source --add <url>` it only changes in
