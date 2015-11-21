@@ -6,7 +6,7 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://til.maltson.com/" rel="canonical">
+<link href="http://til.maltson.com/2015/11/14/redis-queue-for-http-requests.html" rel="canonical">
 <meta name='generator' content='Octopress v Jekyll v2.5.3, Octopress v3.0.11 Octopress Ink v1.2.1'>
 
 <link href='/stylesheets/all-e2b26693b196ff36a2338a24dbce62a7.css' media='all' rel='stylesheet' type='text/css'>
@@ -27,7 +27,7 @@
     <use xlink:href="#site-search-svg"></use>
   </svg></label>
 </form></div>
-  <a class="mobile-nav-item active " href="/"/>Posts</a>
+  <a class="mobile-nav-item " href="/"/>Posts</a>
 
   
   
@@ -49,7 +49,7 @@
   <h1 class="site-title"><a class="site-title-link" href="/"/>Today I Learned</a></h1>
 </header>
 <nav class='main-nav' role="navigation">
-  <a class="main-nav-item active " href="/"/>Posts</a>
+  <a class="main-nav-item " href="/"/>Posts</a>
   <a class="main-nav-item " href="/archive/">Archive</a>
   <a class="main-nav-item " href="/feed/">Subscribe</a>
   <div class='main-nav-item main-nav-search'><form class='site-search' action="https://google.com/search" method="get">
@@ -65,112 +65,51 @@
 <div class="site-main">
 <div class="main ">
   <div class="main-content">
-<article class="entry page   " role="article">
+<article class="entry post   " role="article">
   <header class="entry-header">
     
     <div class='entry-header-content'>
-      <h1 class="entry-title"></h1>
+      <h1 class="entry-title">Redis Queue for HTTP&nbsp;Requests</h1>
       
       
     </div>
   </header>
 
-  <div class="entry-meta"><a class='entry-date' href="/index.html"></a></div>
+  <div class="entry-meta"><a class='entry-date' href="/2015/11/14/redis-queue-for-http-requests.html"><time class='entry-date' datetime='2015-11-14T23:01:46-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
 
-  <div class="entry-content"><div class="home">
+  <div class="entry-content">
+<p>I’m attending (and speaking) at <a href="https://fsto.com">Full Stack TO 2015</a> this weekend and one of
+the talks was from BrainTree. The speaker described how their custom built app
+server, <code>broxy</code> accepts all API requests from clients and then enqueue them
+into Redis. Their Rails app would then dequeue and process those requests.
+This let them take down the entire backend, have the Redis queue build up, and
+then bring the backend back up and avoid any downtime.</p>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Nov 18, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/18/not-the-create-time-you-were-looking-for.html">Not the Create Time You Were Looking For</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 17, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/17/automated-code-review.html">Automated Code Review</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 14, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/14/redis-queue-for-http-requests.html">Redis Queue for HTTP Requests</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 12, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/12/ubuntu-only-etc-environment.html">Ubuntu Only: /etc/environment</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 11, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/11/elasticsearch-clusters-balance-data.html">ElasticSearch Clusters Balance Data</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 10, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/10/oh-my-zsh-os-x-plugin.html">Oh-my-zsh OS X Plugin</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 9, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/09/three-steps-to-be-a-better-teacher.html">Three Steps to Be a Better Teacher</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 6, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/06/osx-reinstall-aint-bad.html">OSX Reinstall Ain't Bad</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 5, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/05/chef-different-gemrc.html">Chef Has a Different Gemrc</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 4, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/11/04/global-gemrc.html">Global Gem Configuration</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+<p>The speaker mentioned they ultimately got rid of their custom app server because
+they had some issues and it was in general superseded by other tools (was it
+maybe the Kafka implementation he mentioned?). Regardless, I thought this idea
+was very novel.</p>
 
 
-<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=-%20http%3A%2F%2Ftil.maltson.com%2F" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=&body=-%20http%3A%2F%2Ftil.maltson.com%2F" title="Share via email">Email</a></div>
+
+<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Redis%20Queue%20for%20HTTP%20Requests%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F14%2Fredis-queue-for-http-requests.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/11/14/redis-queue-for-http-requests.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/11/14/redis-queue-for-http-requests.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Redis%20Queue%20for%20HTTP%20Requests&body=Redis%20Queue%20for%20HTTP%20Requests%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F14%2Fredis-queue-for-http-requests.html" title="Share via email">Email</a></div>
+
+<nav role="pagination" class="post-nav">
+
+<a class="previous-post" href="/2015/11/12/ubuntu-only-etc-environment.html" title="Previous Article: Ubuntu Only: /etc/environment">
+  <div class='previous-post-marker'><span class='previous-post-arrow'>&larr;</span> Previous Article</div>
+  <h6 class='previous-post-title'>Ubuntu Only: /etc/environment</h6>
+</a>
+
+
+<a class="next-post" href="/2015/11/17/automated-code-review.html" title="Next Article: Automated Code Review">
+  <div class='next-post-marker'>Next Article <span class='next-post-arrow'>&rarr;</span></div>
+  <h6 class='next-post-title'>Automated Code Review</h6>
+</a>
+
+</nav>
+
+
 </div>
 
   <footer class='entry-footer' role='contentinfo'>
