@@ -6,9 +6,40 @@
 </description>
     <link>http://til.maltson.com/</link>
     <atom:link href="http://til.maltson.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Nov 2015 22:29:11 -0500</pubDate>
-    <lastBuildDate>Wed, 11 Nov 2015 22:29:11 -0500</lastBuildDate>
+    <pubDate>Fri, 20 Nov 2015 22:18:08 -0500</pubDate>
+    <lastBuildDate>Fri, 20 Nov 2015 22:18:08 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Not the Create Time You Were Looking For</title>
+        <description>&lt;p&gt;For some reason I was always under the impression that the &lt;code&gt;find -ctime&lt;/code&gt; would
+find files by their creation time. Unfortunately, &lt;a href=&quot;http://unix.stackexchange.com/a/91200/77793&quot;&gt;this is not the case&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The POSIX standard only defines three distinct timestamps to be stored for
+each file: the time of last data access, the time of last data modification,
+and the time the file status last changed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As it turns out, according to the man pages, &lt;code&gt;ctime&lt;/code&gt; is actually.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;File’s status was last changed n^24 hours ago. See the comments for -atime to
+understand how rounding affects the interpretation of file status change
+times.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;File status changes can include the file itself changing or file attributes
+(like permissions) changing. This means for your next find, the best you can do
+is the modified time, i.e. &lt;code&gt;mtime&lt;/code&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 18 Nov 2015 18:00:00 -0500</pubDate>
+        <link>http://til.maltson.com/2015/11/18/not-the-create-time-you-were-looking-for.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2015/11/18/not-the-create-time-you-were-looking-for.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>ElasticSearch Clusters Balance Data</title>

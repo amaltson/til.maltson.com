@@ -6,7 +6,7 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://til.maltson.com/2015/11/11/elasticsearch-clusters-balance-data.html" rel="canonical">
+<link href="http://til.maltson.com/2015/11/18/not-the-create-time-you-were-looking-for.html" rel="canonical">
 <meta name='generator' content='Octopress v Jekyll v2.5.3, Octopress v3.0.11 Octopress Ink v1.2.1'>
 
 <link href='/stylesheets/all-e2b26693b196ff36a2338a24dbce62a7.css' media='all' rel='stylesheet' type='text/css'>
@@ -69,36 +69,47 @@
   <header class="entry-header">
     
     <div class='entry-header-content'>
-      <h1 class="entry-title">ElasticSearch Clusters Balance&nbsp;Data</h1>
+      <h1 class="entry-title">Not the Create Time You Were Looking&nbsp;For</h1>
       
       
     </div>
   </header>
 
-  <div class="entry-meta"><a class='entry-date' href="/2015/11/11/elasticsearch-clusters-balance-data.html"><time class='entry-date' datetime='2015-11-11T21:34:47-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
+  <div class="entry-meta"><a class='entry-date' href="/2015/11/18/not-the-create-time-you-were-looking-for.html"><time class='entry-date' datetime='2015-11-18T18:00:00-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
 
   <div class="entry-content">
-<p>Today I added a new ElasticSearch data node to our two node cluster and was
-pleasantly surprised when disk usage on the original two nodes dropped by a
-third. Turns out <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html#_shards_amp_replicas">ElasticSearch distributes shards</a> across all the data nodes.
-Very cool!</p>
+<p>For some reason I was always under the impression that the <code>find -ctime</code> would
+find files by their creation time. Unfortunately, <a href="http://unix.stackexchange.com/a/91200/77793">this is not the case</a>.</p>
+
+<blockquote>
+  <p>The POSIX standard only defines three distinct timestamps to be stored for
+each file: the time of last data access, the time of last data modification,
+and the time the file status last changed.</p>
+</blockquote>
+
+<p>As it turns out, according to the man pages, <code>ctime</code> is actually.</p>
+
+<blockquote>
+  <p>File’s status was last changed n^24 hours ago. See the comments for -atime to
+understand how rounding affects the interpretation of file status change
+times.</p>
+</blockquote>
+
+<p>File status changes can include the file itself changing or file attributes
+(like permissions) changing. This means for your next find, the best you can do
+is the modified time, i.e. <code>mtime</code>.</p>
 
 
 
-<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=ElasticSearch%20Clusters%20Balance%20Data%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F11%2Felasticsearch-clusters-balance-data.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/11/11/elasticsearch-clusters-balance-data.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/11/11/elasticsearch-clusters-balance-data.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=ElasticSearch%20Clusters%20Balance%20Data&body=ElasticSearch%20Clusters%20Balance%20Data%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F11%2Felasticsearch-clusters-balance-data.html" title="Share via email">Email</a></div>
+<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Not%20the%20Create%20Time%20You%20Were%20Looking%20For%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F18%2Fnot-the-create-time-you-were-looking-for.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/11/18/not-the-create-time-you-were-looking-for.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/11/18/not-the-create-time-you-were-looking-for.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Not%20the%20Create%20Time%20You%20Were%20Looking%20For&body=Not%20the%20Create%20Time%20You%20Were%20Looking%20For%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F18%2Fnot-the-create-time-you-were-looking-for.html" title="Share via email">Email</a></div>
 
 <nav role="pagination" class="post-nav">
 
-<a class="previous-post" href="/2015/11/10/oh-my-zsh-os-x-plugin.html" title="Previous Article: Oh-my-zsh OS X Plugin">
+<a class="previous-post" href="/2015/11/11/elasticsearch-clusters-balance-data.html" title="Previous Article: ElasticSearch Clusters Balance Data">
   <div class='previous-post-marker'><span class='previous-post-arrow'>&larr;</span> Previous Article</div>
-  <h6 class='previous-post-title'>Oh-my-zsh OS X Plugin</h6>
+  <h6 class='previous-post-title'>ElasticSearch Clusters Balance Data</h6>
 </a>
 
-
-<a class="next-post" href="/2015/11/18/not-the-create-time-you-were-looking-for.html" title="Next Article: Not the Create Time You Were Looking For">
-  <div class='next-post-marker'>Next Article <span class='next-post-arrow'>&rarr;</span></div>
-  <h6 class='next-post-title'>Not the Create Time You Were Looking For</h6>
-</a>
 
 </nav>
 
