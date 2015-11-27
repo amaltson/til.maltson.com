@@ -96,9 +96,9 @@ need to go and get some Twitter API keys. Make sure not to commit these keys
 to source control, I opted for the environment variable approach. With that in
 place, you can now add a tweet with a simple <code>liquid</code> tag like so:</p>
 
-<p>```</p>
-<div class="embed twitter"><p>There was a 'Twitter::Error::NotFound' error fetching Tweet '&lt;link'</p></div>
-<p>```</p>
+<p><code>
+{% twitter oembed &lt;link to tweet&gt; %}
+</code></p>
 
 <p>Simple and elegant.</p>
 
