@@ -6,9 +6,9 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://til.maltson.com/2015/11/24/changing-base-templates-in-octopress.html" rel="canonical">
+<link href="http://til.maltson.com/2015/11/26/rendering-tweets-in-jekyll-octopress.html" rel="canonical">
 <meta name='generator' content='Octopress v Jekyll v2.5.3, Octopress v3.0.11 Octopress Ink v1.2.1'>
-<title>Changing Base Templates in Octopress</title>
+<title>Rendering Tweets in Jekyll/Octopress</title>
 
 <link href='/stylesheets/all-7f243397aa07a8ba01ec09eccdf074f1.css' media='all' rel='stylesheet' type='text/css'>
 <script>
@@ -78,45 +78,41 @@
   <header class="entry-header">
     
     <div class='entry-header-content'>
-      <h1 class="entry-title">Changing Base Templates in&nbsp;Octopress</h1>
+      <h1 class="entry-title">Rendering Tweets in&nbsp;Jekyll/Octopress</h1>
       
       
     </div>
   </header>
 
-  <div class="entry-meta"><a class='entry-date' href="/2015/11/24/changing-base-templates-in-octopress.html"><time class='entry-date' datetime='2015-11-24T23:00:27-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
+  <div class="entry-meta"><a class='entry-date' href="/2015/11/26/rendering-tweets-in-jekyll-octopress.html"><time class='entry-date' datetime='2015-11-26T22:43:11-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
 
   <div class="entry-content">
-<p>A couple of days ago I tweeted.</p>
+<p>In my <a href="http://til.maltson.com/2015/11/24/changing-base-templates-in-octopress.html">previous TIL</a> I wanted to render a tweet I had made about Octopress. I
+thought, surely there’s a way to do this in Jekyll. With the right keyword
+searches on Google, I came across <a href="https://github.com/rob-murray/jekyll-twitter-plugin">jekyll-twitter-plugin</a>.</p>
 
-<div class="embed twitter"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">I like Octopress, I really do, but I have no idea where it&#39;s generating this &lt;head&gt; tag from. Very confused.</p>&mdash; Arthur Maltson (@amaltson) <a href="https://twitter.com/amaltson/status/668624566659362816">November 23, 2015</a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<p>After adding <code>jekyll-twitter-plugin</code> to the <code>Gemfile</code> and <code>_config.yml</code>, you
+need to go and get some Twitter API keys. Make sure not to commit these keys
+to source control, I opted for the environment variable approach. With that in
+place, you can now add a tweet with a simple <code>liquid</code> tag like so:</p>
 
-<p>The issue I ran into was trying to get a different <code>head.html</code> to work with
-<a href="https://github.com/octopress/genesis-theme">Octopress Genesis</a>. Turns out that while Jekyll by default looks at
-<code>_includes/head.html</code>, when you use the Octopress Genesis, you make the
-changes in the <code>_plugins/theme/includes</code> directory which maps to the <a href="https://github.com/octopress/genesis-theme/tree/master/assets/includes">Octopress
-Genesis includes</a> directory under <code>assets</code>.</p>
+<p>```</p>
+<div class="embed twitter"><p>There was a 'Twitter::Error::NotFound' error fetching Tweet '&lt;link'</p></div>
+<p>```</p>
 
-<p>Once I dropped a <code>head.html</code> in <code>_plugins/theme/includes</code> my new <code>&lt;head&gt;</code>
-elements were picked up.</p>
-
+<p>Simple and elegant.</p>
 
 
-<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Changing%20Base%20Templates%20in%20Octopress%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F24%2Fchanging-base-templates-in-octopress.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/11/24/changing-base-templates-in-octopress.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/11/24/changing-base-templates-in-octopress.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Changing%20Base%20Templates%20in%20Octopress&body=Changing%20Base%20Templates%20in%20Octopress%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F24%2Fchanging-base-templates-in-octopress.html" title="Share via email">Email</a></div>
+
+<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Rendering%20Tweets%20in%20Jekyll%2FOctopress%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F26%2Frendering-tweets-in-jekyll-octopress.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/11/26/rendering-tweets-in-jekyll-octopress.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/11/26/rendering-tweets-in-jekyll-octopress.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Rendering%20Tweets%20in%20Jekyll%2FOctopress&body=Rendering%20Tweets%20in%20Jekyll%2FOctopress%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F26%2Frendering-tweets-in-jekyll-octopress.html" title="Share via email">Email</a></div>
 
 <nav role="pagination" class="post-nav">
 
-<a class="previous-post" href="/2015/11/20/postgres-accept-all-connections.html" title="Previous Article: Postgresql Accept All Connections">
+<a class="previous-post" href="/2015/11/24/changing-base-templates-in-octopress.html" title="Previous Article: Changing Base Templates in Octopress">
   <div class='previous-post-marker'><span class='previous-post-arrow'>&larr;</span> Previous Article</div>
-  <h6 class='previous-post-title'>Postgresql Accept All Connections</h6>
+  <h6 class='previous-post-title'>Changing Base Templates in Octopress</h6>
 </a>
 
-
-<a class="next-post" href="/2015/11/26/rendering-tweets-in-jekyll-octopress.html" title="Next Article: Rendering Tweets in Jekyll/Octopress">
-  <div class='next-post-marker'>Next Article <span class='next-post-arrow'>&rarr;</span></div>
-  <h6 class='next-post-title'>Rendering Tweets in Jekyll/Octopress</h6>
-</a>
 
 </nav>
 
