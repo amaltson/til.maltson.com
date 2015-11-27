@@ -6,33 +6,9 @@
 </description>
     <link>http://til.maltson.com/</link>
     <atom:link href="http://til.maltson.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Nov 2015 23:27:23 -0500</pubDate>
-    <lastBuildDate>Tue, 24 Nov 2015 23:27:23 -0500</lastBuildDate>
+    <pubDate>Sun, 22 Nov 2015 21:57:16 -0500</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2015 21:57:16 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
-    
-      <item>
-        <title>Changing Base Templates in Octopress</title>
-        <description>&lt;p&gt;A couple of days ago I tweeted.&lt;/p&gt;
-
-&lt;div class=&quot;embed twitter&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I like Octopress, I really do, but I have no idea where it&amp;#39;s generating this &amp;lt;head&amp;gt; tag from. Very confused.&lt;/p&gt;&amp;mdash; Arthur Maltson (@amaltson) &lt;a href=&quot;https://twitter.com/amaltson/status/668624566659362816&quot;&gt;November 23, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/div&gt;
-
-&lt;p&gt;The issue I ran into was trying to get a different &lt;code&gt;head.html&lt;/code&gt; to work with
-&lt;a href=&quot;https://github.com/octopress/genesis-theme&quot;&gt;Octopress Genesis&lt;/a&gt;. Turns out that while Jekyll by default looks at
-&lt;code&gt;_includes/head.html&lt;/code&gt;, when you use the Octopress Genesis, you make the
-changes in the &lt;code&gt;_plugins/theme/includes&lt;/code&gt; directory which maps to the &lt;a href=&quot;https://github.com/octopress/genesis-theme/tree/master/assets/includes&quot;&gt;Octopress
-Genesis includes&lt;/a&gt; directory under &lt;code&gt;assets&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Once I dropped a &lt;code&gt;head.html&lt;/code&gt; in &lt;code&gt;_plugins/theme/includes&lt;/code&gt; my new &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;
-elements were picked up.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 24 Nov 2015 23:00:27 -0500</pubDate>
-        <link>http://til.maltson.com/2015/11/24/changing-base-templates-in-octopress.html</link>
-        <guid isPermaLink="true">http://til.maltson.com/2015/11/24/changing-base-templates-in-octopress.html</guid>
-        
-        
-      </item>
     
       <item>
         <title>Postgresql Accept All Connections</title>
@@ -195,6 +171,24 @@ affect the OS and leave the data intact!&lt;/p&gt;
         <guid isPermaLink="true">http://til.maltson.com/2015/11/06/osx-reinstall-aint-bad.html</guid>
         
         <category>osx</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Chef Has a Different Gemrc</title>
+        <description>&lt;p&gt;While the global &lt;code&gt;/etc/gemrc&lt;/code&gt; configuration is standard for system installed gems, gems
+that come in omnibus packages like &lt;code&gt;chef-client&lt;/code&gt;, &lt;code&gt;chefdk&lt;/code&gt;, etc don’t respect
+this setting. It &lt;a href=&quot;http://stackoverflow.com/questions/22259362/where-chef-store-the-gem-source-repository/28816880#28816880&quot;&gt;turns out&lt;/a&gt; for &lt;code&gt;chef-client&lt;/code&gt; it’s &lt;code&gt;/opt/chef/embedded/etc/gemrc&lt;/code&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 05 Nov 2015 22:42:47 -0500</pubDate>
+        <link>http://til.maltson.com/2015/11/05/chef-different-gemrc.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2015/11/05/chef-different-gemrc.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>admin</category>
         
         
       </item>
