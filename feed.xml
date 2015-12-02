@@ -6,9 +6,29 @@
 </description>
     <link>http://til.maltson.com/</link>
     <atom:link href="http://til.maltson.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Nov 2015 10:03:17 -0500</pubDate>
-    <lastBuildDate>Fri, 27 Nov 2015 10:03:17 -0500</lastBuildDate>
+    <pubDate>Wed, 02 Dec 2015 08:54:38 -0500</pubDate>
+    <lastBuildDate>Wed, 02 Dec 2015 08:54:38 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>OS X Vagrant Boxes</title>
+        <description>&lt;p&gt;Last year while automating my OS X &lt;a href=&quot;https://github.com/amaltson/workstation&quot;&gt;workstation with Chef&lt;/a&gt;, I wanted to get a
+Vagrant OS X machine to test the Chef recipes on. There didn’t seem to be an
+easy way &lt;a href=&quot;http://ntk.me/2012/09/07/os-x-on-os-x/http://ntk.me/2012/09/07/os-x-on-os-x/&quot;&gt;at the time&lt;/a&gt;, so I left my cookbook untested 😭🐼.&lt;/p&gt;
+
+&lt;p&gt;Last week my buddy asked this very same question, are there any OS X Vagrant
+boxes? As I typed the email saying there aren’t any, I decided to do a quick
+search on &lt;a href=&quot;https://atlas.hashicorp.com&quot;&gt;Hashicorp’s Atlas&lt;/a&gt;. To my disbelief, there are actually &lt;a href=&quot;https://atlas.hashicorp.com/boxes/search?utf8=✓&amp;amp;sort=&amp;amp;provider=&amp;amp;q=os+x&quot;&gt;many OS X
+Vagrant boxes&lt;/a&gt; hosted on Atlas. It turns out that because of the &lt;a href=&quot;https://github.com/AndrewDryga/vagrant-box-osx#os-x-licensing&quot;&gt;license
+changes&lt;/a&gt;, running OS X virtual machines is easier than ever.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 01 Dec 2015 22:53:01 -0500</pubDate>
+        <link>http://til.maltson.com/2015/12/01/os-x-vagrant-boxes.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2015/12/01/os-x-vagrant-boxes.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Rendering Tweets in Jekyll/Octopress</title>
@@ -190,18 +210,6 @@ to the directory the current finder window is on.&lt;/p&gt;
         <pubDate>Tue, 10 Nov 2015 23:30:40 -0500</pubDate>
         <link>http://til.maltson.com/2015/11/10/oh-my-zsh-os-x-plugin.html</link>
         <guid isPermaLink="true">http://til.maltson.com/2015/11/10/oh-my-zsh-os-x-plugin.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Three Steps to Be a Better Teacher</title>
-        <description>&lt;p&gt;On the &lt;a href=&quot;https://devchat.tv/ruby-rogues/232-rr-teaching-and-how-we-can-all-do-more-to-teach-technical-topics-to-others-with-eric-normand&quot;&gt;Ruby Rogues Teaching episode&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 09 Nov 2015 18:00:00 -0500</pubDate>
-        <link>http://til.maltson.com/2015/11/09/three-steps-to-be-a-better-teacher.html</link>
-        <guid isPermaLink="true">http://til.maltson.com/2015/11/09/three-steps-to-be-a-better-teacher.html</guid>
         
         
       </item>

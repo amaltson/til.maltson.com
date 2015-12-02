@@ -6,9 +6,9 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://til.maltson.com/2015/11/26/rendering-tweets-in-jekyll-octopress.html" rel="canonical">
+<link href="http://til.maltson.com/2015/12/01/os-x-vagrant-boxes.html" rel="canonical">
 <meta name='generator' content='Octopress v Jekyll v2.5.3, Octopress v3.0.11 Octopress Ink v1.2.1'>
-<title>Rendering Tweets in Jekyll/Octopress</title>
+<title>OS X Vagrant Boxes</title>
 
 <link href='/stylesheets/all-7f243397aa07a8ba01ec09eccdf074f1.css' media='all' rel='stylesheet' type='text/css'>
 <script>
@@ -78,46 +78,36 @@
   <header class="entry-header">
     
     <div class='entry-header-content'>
-      <h1 class="entry-title">Rendering Tweets in&nbsp;Jekyll/Octopress</h1>
+      <h1 class="entry-title">OS X Vagrant&nbsp;Boxes</h1>
       
       
     </div>
   </header>
 
-  <div class="entry-meta"><a class='entry-date' href="/2015/11/26/rendering-tweets-in-jekyll-octopress.html"><time class='entry-date' datetime='2015-11-26T22:43:11-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
+  <div class="entry-meta"><a class='entry-date' href="/2015/12/01/os-x-vagrant-boxes.html"><time class='entry-date' datetime='2015-12-01T22:53:01-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span></time></a></div>
 
   <div class="entry-content">
-<p>In my <a href="http://til.maltson.com/2015/11/24/changing-base-templates-in-octopress.html">previous TIL</a> I wanted to render a tweet I had made about Octopress. I
-thought, surely there’s a way to do this in Jekyll. With the right keyword
-searches on Google, I came across <a href="https://github.com/rob-murray/jekyll-twitter-plugin">jekyll-twitter-plugin</a>.</p>
+<p>Last year while automating my OS X <a href="https://github.com/amaltson/workstation">workstation with Chef</a>, I wanted to get a
+Vagrant OS X machine to test the Chef recipes on. There didn’t seem to be an
+easy way <a href="http://ntk.me/2012/09/07/os-x-on-os-x/http://ntk.me/2012/09/07/os-x-on-os-x/">at the time</a>, so I left my cookbook untested 😭🐼.</p>
 
-<p>After adding <code>jekyll-twitter-plugin</code> to the <code>Gemfile</code> and <code>_config.yml</code>, you
-need to go and get some Twitter API keys. Make sure not to commit these keys
-to source control, I opted for the environment variable approach. With that in
-place, you can now add a tweet with a simple <code>liquid</code> tag like so:</p>
-
-<p><code>
-{% twitter oembed &lt;link to tweet&gt; %}
-</code></p>
-
-<p>Simple and elegant.</p>
+<p>Last week my buddy asked this very same question, are there any OS X Vagrant
+boxes? As I typed the email saying there aren’t any, I decided to do a quick
+search on <a href="https://atlas.hashicorp.com">Hashicorp’s Atlas</a>. To my disbelief, there are actually <a href="https://atlas.hashicorp.com/boxes/search?utf8=✓&amp;sort=&amp;provider=&amp;q=os+x">many OS X
+Vagrant boxes</a> hosted on Atlas. It turns out that because of the <a href="https://github.com/AndrewDryga/vagrant-box-osx#os-x-licensing">license
+changes</a>, running OS X virtual machines is easier than ever.</p>
 
 
 
-<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Rendering%20Tweets%20in%20Jekyll%2FOctopress%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F26%2Frendering-tweets-in-jekyll-octopress.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/11/26/rendering-tweets-in-jekyll-octopress.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/11/26/rendering-tweets-in-jekyll-octopress.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Rendering%20Tweets%20in%20Jekyll%2FOctopress&body=Rendering%20Tweets%20in%20Jekyll%2FOctopress%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F26%2Frendering-tweets-in-jekyll-octopress.html" title="Share via email">Email</a></div>
+<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=OS%20X%20Vagrant%20Boxes%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F12%2F01%2Fos-x-vagrant-boxes.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/12/01/os-x-vagrant-boxes.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/12/01/os-x-vagrant-boxes.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=OS%20X%20Vagrant%20Boxes&body=OS%20X%20Vagrant%20Boxes%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F12%2F01%2Fos-x-vagrant-boxes.html" title="Share via email">Email</a></div>
 
 <nav role="pagination" class="post-nav">
 
-<a class="previous-post" href="/2015/11/24/changing-base-templates-in-octopress.html" title="Previous Article: Changing Base Templates in Octopress">
+<a class="previous-post" href="/2015/11/26/rendering-tweets-in-jekyll-octopress.html" title="Previous Article: Rendering Tweets in Jekyll/Octopress">
   <div class='previous-post-marker'><span class='previous-post-arrow'>&larr;</span> Previous Article</div>
-  <h6 class='previous-post-title'>Changing Base Templates in Octopress</h6>
+  <h6 class='previous-post-title'>Rendering Tweets in Jekyll/Octopress</h6>
 </a>
 
-
-<a class="next-post" href="/2015/12/01/os-x-vagrant-boxes.html" title="Next Article: OS X Vagrant Boxes">
-  <div class='next-post-marker'>Next Article <span class='next-post-arrow'>&rarr;</span></div>
-  <h6 class='next-post-title'>OS X Vagrant Boxes</h6>
-</a>
 
 </nav>
 
