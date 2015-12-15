@@ -6,9 +6,28 @@
 </description>
     <link>http://til.maltson.com/</link>
     <atom:link href="http://til.maltson.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Dec 2015 08:54:38 -0500</pubDate>
-    <lastBuildDate>Wed, 02 Dec 2015 08:54:38 -0500</lastBuildDate>
+    <pubDate>Mon, 14 Dec 2015 22:57:39 -0500</pubDate>
+    <lastBuildDate>Mon, 14 Dec 2015 22:57:39 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>New Dependency Resolver for Chef</title>
+        <description>&lt;p&gt;The Chef mailing list moved to a &lt;a href=&quot;https://discourse.chef.io&quot;&gt;Discourse forum&lt;/a&gt; a little while back, which
+makes asking questions and having discussions a pleasure (I 💜  Discourse).&lt;/p&gt;
+
+&lt;p&gt;We’ve been having a bunch of problems resolving &lt;code&gt;Berkshelf&lt;/code&gt; and &lt;code&gt;chef-client&lt;/code&gt;
+dependencies, so I decided to ask a question. The helpful &lt;a href=&quot;https://discourse.chef.io/t/strategies-for-debugging-with-dependency-resolution-issues/7366/4&quot;&gt;martinb3 pointed me
+to Berkshelf master&lt;/a&gt;. It turns out, &lt;code&gt;Berkshelf&lt;/code&gt; is working on a new dependency
+resolution system in the &lt;a href=&quot;https://github.com/berkshelf/solve&quot;&gt;solve gem&lt;/a&gt;. This new resolver is also written in pure
+Ruby, which means no pesky C extensions via &lt;code&gt;gecode&lt;/code&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 14 Dec 2015 22:48:34 -0500</pubDate>
+        <link>http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>OS X Vagrant Boxes</title>
@@ -196,20 +215,6 @@ Very cool!&lt;/p&gt;
         <pubDate>Wed, 11 Nov 2015 21:34:47 -0500</pubDate>
         <link>http://til.maltson.com/2015/11/11/elasticsearch-clusters-balance-data.html</link>
         <guid isPermaLink="true">http://til.maltson.com/2015/11/11/elasticsearch-clusters-balance-data.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Oh-my-zsh OS X Plugin</title>
-        <description>&lt;p&gt;The &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#osx&quot;&gt;osx oh-my-zsh plugin&lt;/a&gt; unlocks a number of useful features ways of
-interacting with Finder from the terminal. My favourite is &lt;code&gt;cdf&lt;/code&gt; to navigate
-to the directory the current finder window is on.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 10 Nov 2015 23:30:40 -0500</pubDate>
-        <link>http://til.maltson.com/2015/11/10/oh-my-zsh-os-x-plugin.html</link>
-        <guid isPermaLink="true">http://til.maltson.com/2015/11/10/oh-my-zsh-os-x-plugin.html</guid>
         
         
       </item>
