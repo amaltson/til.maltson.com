@@ -6,25 +6,28 @@
 </description>
     <link>http://til.maltson.com/</link>
     <atom:link href="http://til.maltson.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Dec 2015 22:57:39 -0500</pubDate>
-    <lastBuildDate>Mon, 14 Dec 2015 22:57:39 -0500</lastBuildDate>
+    <pubDate>Tue, 15 Dec 2015 22:09:06 -0500</pubDate>
+    <lastBuildDate>Tue, 15 Dec 2015 22:09:06 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>New Dependency Resolver for Chef</title>
-        <description>&lt;p&gt;The Chef mailing list moved to a &lt;a href=&quot;https://discourse.chef.io&quot;&gt;Discourse forum&lt;/a&gt; a little while back, which
-makes asking questions and having discussions a pleasure (I 💜  Discourse).&lt;/p&gt;
+        <title>Wrap Existing Line in Vim</title>
+        <description>&lt;p&gt;I write a lot of Markdown (including these posts) in my editor of choice, Vim. I
+also like to stick with 80 character limit to all my text, so Vim autowraps at
+80 characters. Sometimes I want to restructure some text, and making that text
+wrap at 80 characters again turns out to be an annoying and manual task. That
+is, until you read a &lt;a href=&quot;https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim&quot;&gt;blog post from thoughtbot&lt;/a&gt; which introduces you to the
+built in &lt;code&gt;gq&lt;/code&gt; reformat command in Vim.&lt;/p&gt;
 
-&lt;p&gt;We’ve been having a bunch of problems resolving &lt;code&gt;Berkshelf&lt;/code&gt; and &lt;code&gt;chef-client&lt;/code&gt;
-dependencies, so I decided to ask a question. The helpful &lt;a href=&quot;https://discourse.chef.io/t/strategies-for-debugging-with-dependency-resolution-issues/7366/4&quot;&gt;martinb3 pointed me
-to Berkshelf master&lt;/a&gt;. It turns out, &lt;code&gt;Berkshelf&lt;/code&gt; is working on a new dependency
-resolution system in the &lt;a href=&quot;https://github.com/berkshelf/solve&quot;&gt;solve gem&lt;/a&gt;. This new resolver is also written in pure
-Ruby, which means no pesky C extensions via &lt;code&gt;gecode&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Simply select a bunch of text with &lt;code&gt;v&lt;/code&gt; or &lt;code&gt;V&lt;/code&gt;, type &lt;code&gt;gq&lt;/code&gt; and your lines are
+rewrapped.  For best results, you can &lt;code&gt;J&lt;/code&gt; a bunch of poorly formatted lines
+together into one line, then &lt;code&gt;V&lt;/code&gt; those lines and have &lt;code&gt;gq&lt;/code&gt; do its formatting
+magic.&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 14 Dec 2015 22:48:34 -0500</pubDate>
-        <link>http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html</link>
-        <guid isPermaLink="true">http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html</guid>
+        <pubDate>Tue, 15 Dec 2015 21:53:54 -0500</pubDate>
+        <link>http://til.maltson.com/2015/12/15/wrap-existing-line-in-vim.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2015/12/15/wrap-existing-line-in-vim.html</guid>
         
         
       </item>

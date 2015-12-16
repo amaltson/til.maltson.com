@@ -6,11 +6,11 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html" rel="canonical">
+<link href="http://til.maltson.com/2015/12/15/wrap-existing-line-in-vim.html" rel="canonical">
 <meta name='generator' content='Octopress v Jekyll v2.5.3, Octopress v3.0.11 Octopress Ink v1.2.1'>
-<title>New Dependency Resolver for Chef</title>
+<title>Wrap Existing Line in Vim</title>
 
-<link href='/stylesheets/all-e2b26693b196ff36a2338a24dbce62a7.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/all-8edadbadafb4a4fda804821f375a282d.css' media='all' rel='stylesheet' type='text/css'>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -78,27 +78,30 @@
   <header class="entry-header">
     
     <div class='entry-header-content'>
-      <h1 class="entry-title">New Dependency Resolver for&nbsp;Chef</h1>
+      <h1 class="entry-title">Wrap Existing Line in&nbsp;Vim</h1>
       
       
     </div>
   </header>
 
-  <div class="entry-meta"><a class='entry-date' href="/2015/12/14/new-dependency-resolver-for-chef.html"><time class='entry-date' datetime='2015-12-14T22:48:34-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
+  <div class="entry-meta"><a class='entry-date' href="/2015/12/15/wrap-existing-line-in-vim.html"><time class='entry-date' datetime='2015-12-15T21:53:54-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
 
   <div class="entry-content">
-<p>The Chef mailing list moved to a <a href="https://discourse.chef.io">Discourse forum</a> a little while back, which
-makes asking questions and having discussions a pleasure (I 💜  Discourse).</p>
+<p>I write a lot of Markdown (including these posts) in my editor of choice, Vim. I
+also like to stick with 80 character limit to all my text, so Vim autowraps at
+80 characters. Sometimes I want to restructure some text, and making that text
+wrap at 80 characters again turns out to be an annoying and manual task. That
+is, until you read a <a href="https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim">blog post from thoughtbot</a> which introduces you to the
+built in <code>gq</code> reformat command in Vim.</p>
 
-<p>We’ve been having a bunch of problems resolving <code>Berkshelf</code> and <code>chef-client</code>
-dependencies, so I decided to ask a question. The helpful <a href="https://discourse.chef.io/t/strategies-for-debugging-with-dependency-resolution-issues/7366/4">martinb3 pointed me
-to Berkshelf master</a>. It turns out, <code>Berkshelf</code> is working on a new dependency
-resolution system in the <a href="https://github.com/berkshelf/solve">solve gem</a>. This new resolver is also written in pure
-Ruby, which means no pesky C extensions via <code>gecode</code>.</p>
+<p>Simply select a bunch of text with <code>v</code> or <code>V</code>, type <code>gq</code> and your lines are
+rewrapped.  For best results, you can <code>J</code> a bunch of poorly formatted lines
+together into one line, then <code>V</code> those lines and have <code>gq</code> do its formatting
+magic.</p>
 
 
 
-<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=New%20Dependency%20Resolver%20for%20Chef%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F12%2F14%2Fnew-dependency-resolver-for-chef.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=New%20Dependency%20Resolver%20for%20Chef&body=New%20Dependency%20Resolver%20for%20Chef%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F12%2F14%2Fnew-dependency-resolver-for-chef.html" title="Share via email">Email</a></div>
+<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Wrap%20Existing%20Line%20in%20Vim%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F12%2F15%2Fwrap-existing-line-in-vim.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/12/15/wrap-existing-line-in-vim.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/12/15/wrap-existing-line-in-vim.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Wrap%20Existing%20Line%20in%20Vim&body=Wrap%20Existing%20Line%20in%20Vim%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F12%2F15%2Fwrap-existing-line-in-vim.html" title="Share via email">Email</a></div>
 
 <nav role="pagination" class="post-nav">
 
@@ -130,7 +133,7 @@ Ruby, which means no pesky C extensions via <code>gecode</code>.</p>
 </footer>
 </div></div></div>
 </div>
-  <script async src='/javascripts/all-9104d87d9ad4c62b1e90c516fd1db997.js'></script>
+  <script async src='/javascripts/all-76e31445199618a18f175bd315fa0495.js'></script>
   
   
 </body>
