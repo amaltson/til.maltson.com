@@ -6,9 +6,36 @@
 </description>
     <link>http://til.maltson.com/</link>
     <atom:link href="http://til.maltson.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Dec 2015 22:11:07 -0500</pubDate>
-    <lastBuildDate>Tue, 15 Dec 2015 22:11:07 -0500</lastBuildDate>
+    <pubDate>Wed, 06 Jan 2016 22:48:29 -0500</pubDate>
+    <lastBuildDate>Wed, 06 Jan 2016 22:48:29 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Fantastic Gem for CLI Applications</title>
+        <description>&lt;p&gt;If you’re going to build a CLI application in Ruby, you owe it to yourself to
+look into the &lt;a href=&quot;https://github.com/davetron5000/gli&quot;&gt;gli&lt;/a&gt; gem. Especially if you’re considering building a CLI
+application that has subcommands, i.e. Git style. I’ve done the &lt;a href=&quot;https://www.ruby-toolbox.com/categories/CLI_Option_Parsers&quot;&gt;research&lt;/a&gt; on
+&lt;a href=&quot;https://www.ruby-toolbox.com/categories/scripting_frameworks&quot;&gt;Ruby Toolbox&lt;/a&gt; and came out with several options.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Thor - this almost won out, but the help text didn’t cut it. Things like
+&lt;code&gt;--help&lt;/code&gt; at the end of a subcommand don’t work either.&lt;/li&gt;
+  &lt;li&gt;Slop - no support for subcommands in version 4.&lt;/li&gt;
+  &lt;li&gt;Cocaine - no great help text, not fantastic for subcommands.&lt;/li&gt;
+  &lt;li&gt;Trollop - Lacking in documentation, less active.&lt;/li&gt;
+  &lt;li&gt;commander - not as active as I’d like, maintainer tj went to Node, then Go.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The &lt;code&gt;gli&lt;/code&gt; gem seemed to have it all: subcommands, required args, global options
+vs command options, and of course &lt;em&gt;very&lt;/em&gt; nice help output.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 06 Jan 2016 22:30:46 -0500</pubDate>
+        <link>http://til.maltson.com/2016/01/06/fantastic-gem-for-cli-applications.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2016/01/06/fantastic-gem-for-cli-applications.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Wrap Existing Line in Vim</title>
@@ -28,6 +55,25 @@ magic.&lt;/p&gt;
         <pubDate>Tue, 15 Dec 2015 21:53:54 -0500</pubDate>
         <link>http://til.maltson.com/2015/12/15/wrap-existing-line-in-vim.html</link>
         <guid isPermaLink="true">http://til.maltson.com/2015/12/15/wrap-existing-line-in-vim.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>New Dependency Resolver for Chef</title>
+        <description>&lt;p&gt;The Chef mailing list moved to a &lt;a href=&quot;https://discourse.chef.io&quot;&gt;Discourse forum&lt;/a&gt; a little while back, which
+makes asking questions and having discussions a pleasure (I 💜  Discourse).&lt;/p&gt;
+
+&lt;p&gt;We’ve been having a bunch of problems resolving &lt;code&gt;Berkshelf&lt;/code&gt; and &lt;code&gt;chef-client&lt;/code&gt;
+dependencies, so I decided to ask a question. The helpful &lt;a href=&quot;https://discourse.chef.io/t/strategies-for-debugging-with-dependency-resolution-issues/7366/4&quot;&gt;martinb3 pointed me
+to Berkshelf master&lt;/a&gt;. It turns out, &lt;code&gt;Berkshelf&lt;/code&gt; is working on a new dependency
+resolution system in the &lt;a href=&quot;https://github.com/berkshelf/solve&quot;&gt;solve gem&lt;/a&gt;. This new resolver is also written in pure
+Ruby, which means no pesky C extensions via &lt;code&gt;gecode&lt;/code&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 14 Dec 2015 22:48:34 -0500</pubDate>
+        <link>http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html</guid>
         
         
       </item>
@@ -184,40 +230,6 @@ was very novel.&lt;/p&gt;
         <pubDate>Sat, 14 Nov 2015 23:01:46 -0500</pubDate>
         <link>http://til.maltson.com/2015/11/14/redis-queue-for-http-requests.html</link>
         <guid isPermaLink="true">http://til.maltson.com/2015/11/14/redis-queue-for-http-requests.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Ubuntu Only: /etc/environment</title>
-        <description>&lt;p&gt;Making sure environment variables are available to all users on Linux is a
-common problem. One thing I learned from playing with &lt;a href=&quot;http://lattice.cf&quot;&gt;lattice.cf&lt;/a&gt; is dropping
-environment variables in &lt;code&gt;/etc/environment&lt;/code&gt; is a really nice way to accomplish
-that.&lt;/p&gt;
-
-&lt;p&gt;However, as a coworker pointed out, &lt;code&gt;/etc/environment&lt;/code&gt; is an &lt;strong&gt;Ubuntu only&lt;/strong&gt;
-concept, and does not translate to other distributions like Red Hat or CentOS.
-Guess I’m stuck with &lt;code&gt;/etc/profile.d/&amp;lt;some-script&amp;gt;.sh&lt;/code&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 12 Nov 2015 18:00:00 -0500</pubDate>
-        <link>http://til.maltson.com/2015/11/12/ubuntu-only-etc-environment.html</link>
-        <guid isPermaLink="true">http://til.maltson.com/2015/11/12/ubuntu-only-etc-environment.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>ElasticSearch Clusters Balance Data</title>
-        <description>&lt;p&gt;Today I added a new ElasticSearch data node to our two node cluster and was
-pleasantly surprised when disk usage on the original two nodes dropped by a
-third. Turns out &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html#_shards_amp_replicas&quot;&gt;ElasticSearch distributes shards&lt;/a&gt; across all the data nodes.
-Very cool!&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 11 Nov 2015 21:34:47 -0500</pubDate>
-        <link>http://til.maltson.com/2015/11/11/elasticsearch-clusters-balance-data.html</link>
-        <guid isPermaLink="true">http://til.maltson.com/2015/11/11/elasticsearch-clusters-balance-data.html</guid>
         
         
       </item>

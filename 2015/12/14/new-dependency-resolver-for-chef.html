@@ -6,9 +6,9 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://til.maltson.com/2015/11/04/global-gemrc.html" rel="canonical">
+<link href="http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html" rel="canonical">
 <meta name='generator' content='Octopress v Jekyll v2.5.3, Octopress v3.0.11 Octopress Ink v1.2.1'>
-<title>Global Gem Configuration</title>
+<title>New Dependency Resolver for Chef</title>
 
 <link href='/stylesheets/all-e2b26693b196ff36a2338a24dbce62a7.css' media='all' rel='stylesheet' type='text/css'>
 <script>
@@ -78,28 +78,39 @@
   <header class="entry-header">
     
     <div class='entry-header-content'>
-      <h1 class="entry-title">Global Gem&nbsp;Configuration</h1>
+      <h1 class="entry-title">New Dependency Resolver for&nbsp;Chef</h1>
       
       
     </div>
   </header>
 
-  <div class="entry-meta"><a class='entry-date' href="/2015/11/04/global-gemrc.html"><time class='entry-date' datetime='2015-11-04T16:00:00-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
+  <div class="entry-meta"><a class='entry-date' href="/2015/12/14/new-dependency-resolver-for-chef.html"><time class='entry-date' datetime='2015-12-14T22:48:34-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
 
   <div class="entry-content">
-<p>When changing the gem source with <code>gem source --add &lt;url&gt;</code> it only changes in
-<code>~/.gemrc</code> for that user, not globally. Make the change in <code>/etc/gemrc</code> to make
-it global.</p>
+<p>The Chef mailing list moved to a <a href="https://discourse.chef.io">Discourse forum</a> a little while back, which
+makes asking questions and having discussions a pleasure (I 💜  Discourse).</p>
+
+<p>We’ve been having a bunch of problems resolving <code>Berkshelf</code> and <code>chef-client</code>
+dependencies, so I decided to ask a question. The helpful <a href="https://discourse.chef.io/t/strategies-for-debugging-with-dependency-resolution-issues/7366/4">martinb3 pointed me
+to Berkshelf master</a>. It turns out, <code>Berkshelf</code> is working on a new dependency
+resolution system in the <a href="https://github.com/berkshelf/solve">solve gem</a>. This new resolver is also written in pure
+Ruby, which means no pesky C extensions via <code>gecode</code>.</p>
 
 
-<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Global%20Gem%20Configuration%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F04%2Fglobal-gemrc.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/11/04/global-gemrc.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/11/04/global-gemrc.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Global%20Gem%20Configuration&body=Global%20Gem%20Configuration%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F04%2Fglobal-gemrc.html" title="Share via email">Email</a></div>
+
+<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=New%20Dependency%20Resolver%20for%20Chef%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F12%2F14%2Fnew-dependency-resolver-for-chef.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/12/14/new-dependency-resolver-for-chef.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=New%20Dependency%20Resolver%20for%20Chef&body=New%20Dependency%20Resolver%20for%20Chef%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F12%2F14%2Fnew-dependency-resolver-for-chef.html" title="Share via email">Email</a></div>
 
 <nav role="pagination" class="post-nav">
 
+<a class="previous-post" href="/2015/12/01/os-x-vagrant-boxes.html" title="Previous Article: OS X Vagrant Boxes">
+  <div class='previous-post-marker'><span class='previous-post-arrow'>&larr;</span> Previous Article</div>
+  <h6 class='previous-post-title'>OS X Vagrant Boxes</h6>
+</a>
 
-<a class="next-post" href="/2015/11/05/chef-different-gemrc.html" title="Next Article: Chef Has a Different Gemrc">
+
+<a class="next-post" href="/2015/12/15/wrap-existing-line-in-vim.html" title="Next Article: Wrap Existing Line in Vim">
   <div class='next-post-marker'>Next Article <span class='next-post-arrow'>&rarr;</span></div>
-  <h6 class='next-post-title'>Chef Has a Different Gemrc</h6>
+  <h6 class='next-post-title'>Wrap Existing Line in Vim</h6>
 </a>
 
 </nav>
