@@ -93,12 +93,14 @@ application that has subcommands, i.e. Git style. I’ve done the <a href="https
 <a href="https://www.ruby-toolbox.com/categories/scripting_frameworks">Ruby Toolbox</a> and came out with several options.</p>
 
 <ul>
-  <li>Thor - this almost won out, but the help text didn’t cut it. Things like
+  <li><a href="https://github.com/erikhuda/thor">Thor</a> - this almost won out, but the help text didn’t cut it. Things like
 <code>--help</code> at the end of a subcommand don’t work either.</li>
-  <li>Slop - no support for subcommands in version 4.</li>
-  <li>Cocaine - no great help text, not fantastic for subcommands.</li>
-  <li>Trollop - Lacking in documentation, less active.</li>
-  <li>commander - not as active as I’d like, maintainer tj went to Node, then Go.</li>
+  <li><a href="https://github.com/leejarvis/slop">Slop</a> - no support for subcommands in version 4.</li>
+  <li><a href="https://github.com/thoughtbot/cocaine">Cocaine</a> - no great help text, not fantastic for subcommands.</li>
+  <li><a href="https://github.com/ManageIQ/trollop">Trollop</a> - Lacking in documentation, less active.</li>
+  <li><a href="https://github.com/commander-rb/commander">commander</a> - not as active as I’d like, maintainer <strong>tj</strong> went to Node, then
+Go. It also seemed too heavy weight for my needs, and again the helper text
+wasn’t as nice. This is still a nice option.</li>
 </ul>
 
 <p>The <code>gli</code> gem seemed to have it all: subcommands, required args, global options
