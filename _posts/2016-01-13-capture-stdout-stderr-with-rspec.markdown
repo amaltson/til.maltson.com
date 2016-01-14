@@ -17,7 +17,7 @@ might look like to use it.
 {% highlight ruby %}
 describe Cli::App do
   it 'should output to stdout' do
-    expect { puts 'Hello world' }.to output(/world/).to_stdout
+    expect { puts 'Hello, world!' }.to output(/world/).to_stdout
   end
 
   it 'should output to stderr' do
