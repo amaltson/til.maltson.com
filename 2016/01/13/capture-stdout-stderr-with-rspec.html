@@ -6,9 +6,9 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://til.maltson.com/2015/11/05/chef-different-gemrc.html" rel="canonical">
+<link href="http://til.maltson.com/2016/01/13/capture-stdout-stderr-with-rspec.html" rel="canonical">
 <meta name='generator' content='Octopress v Jekyll v2.5.3, Octopress v3.0.11 Octopress Ink v1.2.1'>
-<title>Chef Has a Different Gemrc</title>
+<title>Capture Stdout/stderr With RSpec</title>
 
 <link href='/stylesheets/all-98cfbc21f93ed51c0a0cc2c2a8531d86.css' media='all' rel='stylesheet' type='text/css'>
 <script>
@@ -78,35 +78,51 @@
   <header class="entry-header">
     
     <div class='entry-header-content'>
-      <h1 class="entry-title">Chef Has a Different&nbsp;Gemrc</h1>
+      <h1 class="entry-title">Capture Stdout/stderr With&nbsp;RSpec</h1>
       
       
     </div>
   </header>
 
-  <div class="entry-meta"><a class='entry-date' href="/2015/11/05/chef-different-gemrc.html"><time class='entry-date' datetime='2015-11-05T22:42:47-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></a></div>
+  <div class="entry-meta"><a class='entry-date' href="/2016/01/13/capture-stdout-stderr-with-rspec.html"><time class='entry-date' datetime='2016-01-13T21:28:19-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span></time></a></div>
 
   <div class="entry-content">
-<p>While the global <code>/etc/gemrc</code> configuration is standard for system installed gems, gems
-that come in omnibus packages like <code>chef-client</code>, <code>chefdk</code>, etc don’t respect
-this setting. It <a href="http://stackoverflow.com/questions/22259362/where-chef-store-the-gem-source-repository/28816880#28816880">turns out</a> for <code>chef-client</code> it’s <code>/opt/chef/embedded/etc/gemrc</code>.</p>
+<p>In my <a href="http://til.maltson.com/2016/01/06/fantastic-gem-for-cli-applications.html">previous post</a> I mentioned an awesome gem for building CLI tools. A CLI
+tool’s User Interface is through <code>stdout</code> and <code>stderr</code>, but how do you test that
+in RSpec? My initial thought was to capture <code>stdout/stderr</code> by setting <code>$stdout</code>
+and <code>$stderr</code> to a <code>spy</code> and inspecting the output.</p>
+
+<p>Before I did that, I thought I’d do a quick search to see if the RSpec
+developers had already thought of this and provided matchers for this use case.
+Sure enough, RSpec includes an <a href="https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/output-matcher">output matcher</a>. Here’s a quick example what it
+might look like to use it.</p>
+
+<p>```ruby
+describe Cli::App do
+  it ‘should output to stdout’ do
+    expect { puts ‘Hello world’ }.to output(/world/).to_stdout
+  end</p>
+
+<p>it ‘should output to stderr’ do
+    expect { warn ‘Explosion!’ }.to output(“Explosion!\n”).to_stderr
+  end
+end
+```</p>
+
+<p>Once again, with the magic of RSpec, my tests are cleaner and more English like.
+Thanks RSpec!</p>
 
 
 
-<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Chef%20Has%20a%20Different%20Gemrc%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F05%2Fchef-different-gemrc.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2015/11/05/chef-different-gemrc.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2015/11/05/chef-different-gemrc.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Chef%20Has%20a%20Different%20Gemrc&body=Chef%20Has%20a%20Different%20Gemrc%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2015%2F11%2F05%2Fchef-different-gemrc.html" title="Share via email">Email</a></div>
+<div class="entry-social-sharing social-links"><a class="twitter-share-link" href="https://twitter.com/intent/tweet?&text=Capture%20Stdout%2Fstderr%20With%20RSpec%20%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2016%2F01%2F13%2Fcapture-stdout-stderr-with-rspec.html" title="Share on Twitter">Twitter</a><a class="facebook-share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://til.maltson.com/2016/01/13/capture-stdout-stderr-with-rspec.html" title="Share on Facebook">Facebook</a><a class="g-plus-share-link" href="https://plus.google.com/share?url=http://til.maltson.com/2016/01/13/capture-stdout-stderr-with-rspec.html" title="Share on Google+">Google+</a><a class="email-share-link" href="mailto:?subject=Capture%20Stdout%2Fstderr%20With%20RSpec&body=Capture%20Stdout%2Fstderr%20With%20RSpec%20%20-%20http%3A%2F%2Ftil.maltson.com%2F2016%2F01%2F13%2Fcapture-stdout-stderr-with-rspec.html" title="Share via email">Email</a></div>
 
 <nav role="pagination" class="post-nav">
 
-<a class="previous-post" href="/2015/11/04/global-gemrc.html" title="Previous Article: Global Gem Configuration">
+<a class="previous-post" href="/2016/01/06/fantastic-gem-for-cli-applications.html" title="Previous Article: Fantastic Gem for CLI Applications">
   <div class='previous-post-marker'><span class='previous-post-arrow'>&larr;</span> Previous Article</div>
-  <h6 class='previous-post-title'>Global Gem Configuration</h6>
+  <h6 class='previous-post-title'>Fantastic Gem for CLI Applications</h6>
 </a>
 
-
-<a class="next-post" href="/2015/11/06/osx-reinstall-aint-bad.html" title="Next Article: OSX Reinstall Ain't Bad">
-  <div class='next-post-marker'>Next Article <span class='next-post-arrow'>&rarr;</span></div>
-  <h6 class='next-post-title'>OSX Reinstall Ain't Bad</h6>
-</a>
 
 </nav>
 

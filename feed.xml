@@ -6,9 +6,44 @@
 </description>
     <link>http://til.maltson.com/</link>
     <atom:link href="http://til.maltson.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Jan 2016 22:53:31 -0500</pubDate>
-    <lastBuildDate>Wed, 06 Jan 2016 22:53:31 -0500</lastBuildDate>
+    <pubDate>Wed, 13 Jan 2016 21:53:59 -0500</pubDate>
+    <lastBuildDate>Wed, 13 Jan 2016 21:53:59 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Capture Stdout/stderr With RSpec</title>
+        <description>&lt;p&gt;In my &lt;a href=&quot;http://til.maltson.com/2016/01/06/fantastic-gem-for-cli-applications.html&quot;&gt;previous post&lt;/a&gt; I mentioned an awesome gem for building CLI tools. A CLI
+tool’s User Interface is through &lt;code&gt;stdout&lt;/code&gt; and &lt;code&gt;stderr&lt;/code&gt;, but how do you test that
+in RSpec? My initial thought was to capture &lt;code&gt;stdout/stderr&lt;/code&gt; by setting &lt;code&gt;$stdout&lt;/code&gt;
+and &lt;code&gt;$stderr&lt;/code&gt; to a &lt;code&gt;spy&lt;/code&gt; and inspecting the output.&lt;/p&gt;
+
+&lt;p&gt;Before I did that, I thought I’d do a quick search to see if the RSpec
+developers had already thought of this and provided matchers for this use case.
+Sure enough, RSpec includes an &lt;a href=&quot;https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/output-matcher&quot;&gt;output matcher&lt;/a&gt;. Here’s a quick example what it
+might look like to use it.&lt;/p&gt;
+
+&lt;p&gt;```ruby
+describe Cli::App do
+  it ‘should output to stdout’ do
+    expect { puts ‘Hello world’ }.to output(/world/).to_stdout
+  end&lt;/p&gt;
+
+&lt;p&gt;it ‘should output to stderr’ do
+    expect { warn ‘Explosion!’ }.to output(“Explosion!\n”).to_stderr
+  end
+end
+```&lt;/p&gt;
+
+&lt;p&gt;Once again, with the magic of RSpec, my tests are cleaner and more English like.
+Thanks RSpec!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 13 Jan 2016 21:28:19 -0500</pubDate>
+        <link>http://til.maltson.com/2016/01/13/capture-stdout-stderr-with-rspec.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2016/01/13/capture-stdout-stderr-with-rspec.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Fantastic Gem for CLI Applications</title>
@@ -210,28 +245,6 @@ GitHub. Pretty cool!&lt;/p&gt;
         <pubDate>Tue, 17 Nov 2015 20:00:00 -0500</pubDate>
         <link>http://til.maltson.com/2015/11/17/automated-code-review.html</link>
         <guid isPermaLink="true">http://til.maltson.com/2015/11/17/automated-code-review.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Redis Queue for HTTP Requests</title>
-        <description>&lt;p&gt;I’m attending (and speaking) at &lt;a href=&quot;https://fsto.com&quot;&gt;Full Stack TO 2015&lt;/a&gt; this weekend and one of
-the talks was from BrainTree. The speaker described how their custom built app
-server, &lt;code&gt;broxy&lt;/code&gt; accepts all API requests from clients and then enqueue them
-into Redis. Their Rails app would then dequeue and process those requests.
-This let them take down the entire backend, have the Redis queue build up, and
-then bring the backend back up and avoid any downtime.&lt;/p&gt;
-
-&lt;p&gt;The speaker mentioned they ultimately got rid of their custom app server because
-they had some issues and it was in general superseded by other tools (was it
-maybe the Kafka implementation he mentioned?). Regardless, I thought this idea
-was very novel.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 14 Nov 2015 23:01:46 -0500</pubDate>
-        <link>http://til.maltson.com/2015/11/14/redis-queue-for-http-requests.html</link>
-        <guid isPermaLink="true">http://til.maltson.com/2015/11/14/redis-queue-for-http-requests.html</guid>
         
         
       </item>
