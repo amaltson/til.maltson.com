@@ -97,17 +97,15 @@ developers had already thought of this and provided matchers for this use case.
 Sure enough, RSpec includes an <a href="https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/output-matcher">output matcher</a>. Here’s a quick example what it
 might look like to use it.</p>
 
-<p>```ruby
-describe Cli::App do
-  it ‘should output to stdout’ do
-    expect { puts ‘Hello world’ }.to output(/world/).to_stdout
-  end</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">describe</span> <span class="no">Cli</span><span class="o">::</span><span class="no">App</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s1">&#39;should output to stdout&#39;</span> <span class="k">do</span>
+    <span class="n">expect</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s1">&#39;Hello world&#39;</span> <span class="p">}</span><span class="o">.</span><span class="n">to</span> <span class="n">output</span><span class="p">(</span><span class="sr">/world/</span><span class="p">)</span><span class="o">.</span><span class="n">to_stdout</span>
+  <span class="k">end</span>
 
-<p>it ‘should output to stderr’ do
-    expect { warn ‘Explosion!’ }.to output(“Explosion!\n”).to_stderr
-  end
-end
-```</p>
+  <span class="n">it</span> <span class="s1">&#39;should output to stderr&#39;</span> <span class="k">do</span>
+    <span class="n">expect</span> <span class="p">{</span> <span class="nb">warn</span> <span class="s1">&#39;Explosion!&#39;</span> <span class="p">}</span><span class="o">.</span><span class="n">to</span> <span class="n">output</span><span class="p">(</span><span class="s2">&quot;Explosion!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_stderr</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
 
 <p>Once again, with the magic of RSpec, my tests are cleaner and more English like.
 Thanks RSpec!</p>
