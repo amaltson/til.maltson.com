@@ -99,7 +99,7 @@ might look like to use it.</p>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">describe</span> <span class="no">Cli</span><span class="o">::</span><span class="no">App</span> <span class="k">do</span>
   <span class="n">it</span> <span class="s1">&#39;should output to stdout&#39;</span> <span class="k">do</span>
-    <span class="n">expect</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s1">&#39;Hello world&#39;</span> <span class="p">}</span><span class="o">.</span><span class="n">to</span> <span class="n">output</span><span class="p">(</span><span class="sr">/world/</span><span class="p">)</span><span class="o">.</span><span class="n">to_stdout</span>
+    <span class="n">expect</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s1">&#39;Hello, world!&#39;</span> <span class="p">}</span><span class="o">.</span><span class="n">to</span> <span class="n">output</span><span class="p">(</span><span class="sr">/world/</span><span class="p">)</span><span class="o">.</span><span class="n">to_stdout</span>
   <span class="k">end</span>
 
   <span class="n">it</span> <span class="s1">&#39;should output to stderr&#39;</span> <span class="k">do</span>
