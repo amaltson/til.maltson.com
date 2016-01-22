@@ -2,7 +2,7 @@
 layout: theme:post
 title: "Chaining RSpec Matchers"
 date: 2016-01-14T22:05:19-05:00
-published: false
+published: true
 ---
 
 I'm on a bit of an RSpec TIL bonanza, primary because I'm taking the time to dig
