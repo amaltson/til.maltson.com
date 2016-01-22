@@ -14,7 +14,7 @@ developers had already thought of this and provided matchers for this use case.
 Sure enough, RSpec includes an [output matcher]. Here's a quick example what it
 might look like to use it.
 
-{% highlight ruby %}
+{% codeblock lang:ruby mark:3 %}
 describe Cli::App do
   it 'should output to stdout' do
     expect { puts 'Hello, world!' }.to output(/world/).to_stdout
@@ -24,7 +24,7 @@ describe Cli::App do
     expect { warn 'Explosion!' }.to output("Explosion!\n").to_stderr
   end
 end
-{% endhighlight %}
+{% endcodeblock %}
 
 Once again, with the magic of RSpec, my tests are cleaner and more English like.
 Thanks RSpec!

@@ -9,5 +9,3 @@ github_username:  amaltson
 
 # Build settings
 markdown: kramdown
-
-gems: ['octopress-genesis-theme','jekyll-twitter-plugin']
