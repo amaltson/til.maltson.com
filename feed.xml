@@ -6,9 +6,36 @@
 </description>
     <link>http://til.maltson.com/</link>
     <atom:link href="http://til.maltson.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Jan 2016 17:57:13 -0500</pubDate>
-    <lastBuildDate>Fri, 22 Jan 2016 17:57:13 -0500</lastBuildDate>
+    <pubDate>Fri, 05 Feb 2016 08:20:44 -0500</pubDate>
+    <lastBuildDate>Fri, 05 Feb 2016 08:20:44 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Awesome Print</title>
+        <description>&lt;p&gt;On a recent &lt;a href=&quot;http://www.rubytapas.com/episodes/372-Awesome-Print&quot;&gt;Ruby Tapas episode&lt;/a&gt; (my favourite screencast service), Avdi
+introduced the &lt;a href=&quot;https://github.com/michaeldv/awesome_print&quot;&gt;Awesome Print&lt;/a&gt; gem. It’s basically the built in &lt;code&gt;pp&lt;/code&gt; on
+steroids. You require the gem then use it via &lt;code&gt;ap&lt;/code&gt; method call to awesome print
+something to the screen. However, my favourite way to use Awesome Print is to
+make it the default output in &lt;a href=&quot;http://pryrepl.org/&quot;&gt;Pry&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To get this behaviour, you’ll need to &lt;code&gt;gem install awesome_print&lt;/code&gt;, then modify
+your &lt;code&gt;~/.pryrc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ruby
+require &#39;awesome_print&#39;
+AwesomePrint.pry!
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Give it a whirl, I promise you’ll never go back. Also, subscribe to RubyTapas
+for more Ruby awesomeness!&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 05 Feb 2016 08:18:11 -0500</pubDate>
+        <link>http://til.maltson.com/2016/02/05/awesome-print.html</link>
+        <guid isPermaLink="true">http://til.maltson.com/2016/02/05/awesome-print.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Chaining RSpec Matchers</title>
@@ -236,37 +263,6 @@ postgresql accept requests from anywhere.&lt;/p&gt;
         <pubDate>Fri, 20 Nov 2015 22:30:52 -0500</pubDate>
         <link>http://til.maltson.com/2015/11/20/postgres-accept-all-connections.html</link>
         <guid isPermaLink="true">http://til.maltson.com/2015/11/20/postgres-accept-all-connections.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Not the Create Time You Were Looking For</title>
-        <description>&lt;p&gt;For some reason I was always under the impression that the &lt;code&gt;find -ctime&lt;/code&gt; would
-find files by their creation time. Unfortunately, &lt;a href=&quot;http://unix.stackexchange.com/a/91200/77793&quot;&gt;this is not the case&lt;/a&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The POSIX standard only defines three distinct timestamps to be stored for
-each file: the time of last data access, the time of last data modification,
-and the time the file status last changed.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;As it turns out, according to the man pages, &lt;code&gt;ctime&lt;/code&gt; is actually.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;File’s status was last changed n^24 hours ago. See the comments for -atime to
-understand how rounding affects the interpretation of file status change
-times.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;File status changes can include the file itself changing or file attributes
-(like permissions) changing. This means for your next find, the best you can do
-is the modified time, i.e. &lt;code&gt;mtime&lt;/code&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 18 Nov 2015 18:00:00 -0500</pubDate>
-        <link>http://til.maltson.com/2015/11/18/not-the-create-time-you-were-looking-for.html</link>
-        <guid isPermaLink="true">http://til.maltson.com/2015/11/18/not-the-create-time-you-were-looking-for.html</guid>
         
         
       </item>
